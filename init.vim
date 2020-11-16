@@ -9,11 +9,11 @@ source $HOME/.config/nvim/keys/mappings.vim
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Theme
-source $HOME/.config/nvim/theme/codedark.vim
+"source $HOME/.config/nvim/theme/codedark.vim
 "source $HOME/.config/nvim/theme/equinusocio_material.vim
 "source $HOME/.config/nvim/theme/kaicataldo_material.vim
 "source $HOME/.config/nvim/theme/oceanic_next.vim
-"source $HOME/.config/nvim/theme/onedark.vim
+source $HOME/.config/nvim/theme/onedark.vim
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Start Page
@@ -56,4 +56,3 @@ source $HOME/.config/nvim/plug-config/signify.vim
 " ---------------------------------------------------------------------------------------------------------------------------------
 " Colorizer for hex color codes
 lua require'colorizer'.setup()
-" ---------------------------------------------------------------------------------------------------------------------------------
