@@ -22,7 +22,7 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 "----------------------------------------------------------------------------------------------------------------------------------
 " Airline Status and Tabs
 source $HOME/.config/nvim/plug-config/airline.vim
-let g:airline_theme='codedark'
+let g:airline_theme='onedark'
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Side Tree
