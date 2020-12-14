@@ -21,6 +21,7 @@ call plug#begin()
 "   Syntax-highliter
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
+"	Plug 'nvim-treesitter/nvim-treesitter'
 
 "   File and text search
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -35,6 +36,7 @@ call plug#begin()
 "   utils
     Plug 'jiangmiao/auto-pairs'
     Plug 'frazrepo/vim-rainbow'
+    Plug 'Yggdroot/indentLine'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'mhinz/vim-startify'
     Plug 'vimwiki/vimwiki'

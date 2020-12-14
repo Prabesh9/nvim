@@ -52,7 +52,10 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 " ---------------------------------------------------------------------------------------------------------------------------------
 " Rainbow Bracket Colorizer
-" let g:rainbow_active = 1
+let g:rainbow_active = 1
 " ---------------------------------------------------------------------------------------------------------------------------------
 " Colorizer for hex color codes
 lua require'colorizer'.setup()
+" ---------------------------------------------------------------------------------------------------------------------------------
+"  IndentLine
+source $HOME/.config/nvim/plug-config/indentline.vim
