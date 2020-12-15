@@ -21,7 +21,8 @@ call plug#begin()
 "   Syntax-highliter
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
-"	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
 
 "   File and text search
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

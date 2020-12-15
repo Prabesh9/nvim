@@ -59,3 +59,6 @@ lua require'colorizer'.setup()
 " ---------------------------------------------------------------------------------------------------------------------------------
 "  IndentLine
 source $HOME/.config/nvim/plug-config/indentline.vim
+" ---------------------------------------------------------------------------------------------------------------------------------
+"  Treesitter
+source $HOME/.config/nvim/plug-config/treesitter.vim
