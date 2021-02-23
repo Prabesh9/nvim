@@ -41,4 +41,8 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'mhinz/vim-startify'
     Plug 'vimwiki/vimwiki'
+
+"   Commentor
+    Plug 'preservim/nerdcommenter'
+
 call plug#end()

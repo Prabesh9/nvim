@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
   "git.addGBlameToVirtualText": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "java.jdt.ls.vmargs": "-javaagent:/home/lucifer/Programs/Java/lombok/lombok.jar"
 }
