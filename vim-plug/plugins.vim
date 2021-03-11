@@ -1,10 +1,11 @@
 call plug#begin()
 "	Themes
 	Plug 'joshdick/onedark.vim'
-"	Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-"	Plug 'chuling/equinusocio-material.vim'
-"	Plug 'mhartington/oceanic-next'
-"    Plug 'tomasiser/vim-code-dark'
+    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'chuling/equinusocio-material.vim'
+    Plug 'mhartington/oceanic-next'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'morhetz/gruvbox'
 
 "   Airline
     Plug 'vim-airline/vim-airline'

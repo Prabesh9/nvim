@@ -11,9 +11,10 @@ source $HOME/.config/nvim/keys/mappings.vim
 " Theme
 "source $HOME/.config/nvim/theme/codedark.vim
 "source $HOME/.config/nvim/theme/equinusocio_material.vim
-"source $HOME/.config/nvim/theme/kaicataldo_material.vim
+source $HOME/.config/nvim/theme/kaicataldo_material.vim
 "source $HOME/.config/nvim/theme/oceanic_next.vim
-source $HOME/.config/nvim/theme/onedark.vim
+"source $HOME/.config/nvim/theme/onedark.vim
+"source $HOME/.config/nvim/theme/gruvbox.vim
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Start Page
@@ -22,7 +23,7 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 "----------------------------------------------------------------------------------------------------------------------------------
 " Airline Status and Tabs
 source $HOME/.config/nvim/plug-config/airline.vim
-let g:airline_theme='onedark'
+let g:airline_theme='material'
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Side Tree
@@ -52,10 +53,10 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 " ---------------------------------------------------------------------------------------------------------------------------------
 " Rainbow Bracket Colorizer
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 " ---------------------------------------------------------------------------------------------------------------------------------
 " Colorizer for hex color codes
-lua require'colorizer'.setup()
+"lua require'colorizer'.setup()
 " ---------------------------------------------------------------------------------------------------------------------------------
 "  IndentLine
 source $HOME/.config/nvim/plug-config/indentline.vim
