@@ -23,7 +23,7 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 "----------------------------------------------------------------------------------------------------------------------------------
 " Airline Status and Tabs
 source $HOME/.config/nvim/plug-config/airline.vim
-let g:airline_theme='codedark'
+let g:airline_theme='minimalist'
 "
 "----------------------------------------------------------------------------------------------------------------------------------
 " Side Tree
@@ -59,7 +59,9 @@ source $HOME/.config/nvim/plug-config/signify.vim
 "lua require'colorizer'.setup()
 " ---------------------------------------------------------------------------------------------------------------------------------
 "  IndentLine
-source $HOME/.config/nvim/plug-config/indentline.vim
+"source $HOME/.config/nvim/plug-config/indentline.vim
 " ---------------------------------------------------------------------------------------------------------------------------------
 "  Treesitter
 source $HOME/.config/nvim/plug-config/treesitter.vim
+
+"luafile $HOME/.config/nvim/plug-config/nvcodeline.lua

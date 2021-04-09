@@ -11,6 +11,11 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+"   Galaxyline
+    "Plug 'glepnir/galaxyline.nvim'
+    "Plug 'kyazdani42/nvim-web-devicons' " lua
+
+
 "   NerdTree
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -38,7 +43,7 @@ call plug#begin()
 "   utils
     Plug 'jiangmiao/auto-pairs'
     Plug 'frazrepo/vim-rainbow'
-    Plug 'Yggdroot/indentLine'
+    "Plug 'Yggdroot/indentLine'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'mhinz/vim-startify'
     Plug 'vimwiki/vimwiki'
