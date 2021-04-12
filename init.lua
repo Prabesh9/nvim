@@ -1,6 +1,7 @@
 require('config.packer-auto')
 require('plugin')
 require('theme')
+require('nv-nvimtree')
 require('config.my_statusline')
 
 vim.cmd('source ~/.config/nvim/vim-script/nvim-tree.vim')
