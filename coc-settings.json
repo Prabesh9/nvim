@@ -1,0 +1,3 @@
+{
+    "java.jdt.ls.vmargs": "-javaagent:/home/lucifer/Programs/Java/lombok/lombok.jar -Xbootclasspath/a:/home/lucifer/Programs/Java/lombok/lombok.jar" 
+}

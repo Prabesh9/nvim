@@ -1,6 +1,21 @@
 local gl = require('galaxyline')
--- get my theme in galaxyline repo
--- local colors = require('galaxyline.theme').default
+local gls = gl.section
+local extension = require('galaxyline.provider_extensions')
+
+gl.short_line_list = {
+    'LuaTree',
+    'vista',
+    'dbui',
+    'startify',
+    'term',
+    'nerdtree',
+    'fugitive',
+    'fugitiveblame',
+    'plug'
+}
+
+-- VistaPlugin = extension.vista_nearest
+
 local colors = {
     bg = '#181818',
     yellow = '#DCDCAA',
@@ -19,16 +34,84 @@ local colors = {
     red = '#D16969',
     error_red = '#F44747',
     info_yellow = '#FFCC66'
+
 }
+
+local function lsp_status(status)
+    shorter_stat = ''
+    for match in string.gmatch(status, "[^%s]+")  do
+        err_warn = string.find(match, "^[WE]%d+", 0)
+        if not err_warn then
+            shorter_stat = shorter_stat .. ' ' .. match
+        end
+    end
+    return shorter_stat
+end
+
+
+local function get_coc_lsp()
+  local status = vim.fn['coc#status']()
+  if not status or status == '' then
+      return ''
+  end
+  return lsp_status(status)
+end
+
+function get_diagnostic_info()
+  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+    return get_coc_lsp()
+    end
+  return ''
+end
+
+local function get_current_func()
+  local has_func, func_name = pcall(vim.fn.nvim_buf_get_var,0,'coc_current_function')
+  if not has_func then return end
+      return func_name
+  end
+
+function get_function_info()
+  if vim.fn.exists('*coc#rpc#start_server') == 1 then
+    return get_current_func()
+    end
+  return ''
+end
+
+local function trailing_whitespace()
+    local trail = vim.fn.search("\\s$", "nw")
+    if trail ~= 0 then
+        return ' '
+    else
+        return nil
+    end
+end
+
+CocStatus = get_diagnostic_info
+CocFunc = get_current_func
+TrailingWhiteSpace = trailing_whitespace
+
+function has_file_type()
+    local f_type = vim.bo.filetype
+    if not f_type or f_type == '' then
+        return false
+    end
+    return true
+end
+
+local buffer_not_empty = function()
+  if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
+    return true
+  end
+  return false
+end
+
 local condition = require('galaxyline.condition')
-local gls = gl.section
-gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
 gls.left[1] = {
-    ViMode = {
-        provider = function()
-            -- auto change color according the vim mode
-            local mode_color = {
+  ViMode = {
+      provider = function()
+          -- auto change color according the vim mode
+          local mode_color = {
                 n = colors.blue,
                 i = colors.green,
                 v = colors.purple,
@@ -54,10 +137,8 @@ gls.left[1] = {
             return '▊ '
         end,
         highlight = {colors.red, colors.bg}
-    }
+    },
 }
-print(vim.fn.getbufvar(0, 'ts'))
-vim.fn.getbufvar(0, 'ts')
 
 gls.left[2] = {
     GitIcon = {
@@ -106,6 +187,25 @@ gls.left[6] = {
     }
 }
 
+
+gls.left[7] = {
+    CocStatus = {
+     provider = CocStatus,
+     highlight = {colors.grey,colors.bg},
+     icon = '  '
+    }
+}
+
+gls.left[8] = {
+  CocFunc = {
+    provider = CocFunc,
+    icon = '  λ ',
+    highlight = {colors.grey,colors.bg},
+  }
+}
+
+
+
 gls.right[1] = {
     DiagnosticError = {provider = 'DiagnosticError', icon = '  ', highlight = {colors.error_red, colors.bg}}
 }
@@ -117,29 +217,8 @@ gls.right[3] = {
 
 gls.right[4] = {DiagnosticInfo = {provider = 'DiagnosticInfo', icon = '  ', highlight = {colors.info_yellow, colors.bg}}}
 
-local function get_coc_lsp()
-  local status = vim.fn['coc#status']()
-  if not status or status == '' then
-      return ''
-  end
-  return lsp_status(status)
-end
 
 gls.right[5] = {
-    ShowLspClient = {
-        provider = "GetLspClient",
-        condition = function()
-            local tbl = {['dashboard'] = true, [' '] = true}
-            if tbl[vim.bo.filetype] then return false end
-            return true
-        end,
-        icon = ' ',
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-
-gls.right[6] = {
     LineInfo = {
         provider = 'LineColumn',
         separator = '  ',
@@ -148,7 +227,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[6] = {
     PerCent = {
         provider = 'LinePercent',
         separator = ' ',
@@ -157,7 +236,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[7] = {
     Tabstop = {
         provider = function()
             return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
@@ -169,7 +248,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[8] = {
     BufferType = {
         provider = 'FileTypeName',
         condition = condition.hide_in_width,
@@ -179,7 +258,7 @@ gls.right[9] = {
     }
 }
 
-gls.right[10] = {
+gls.right[9] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = condition.hide_in_width,
@@ -189,7 +268,7 @@ gls.right[10] = {
     }
 }
 
-gls.right[11] = {
+gls.right[10] = {
     Space = {
         provider = function()
             return ' '
