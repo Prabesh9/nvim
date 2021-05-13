@@ -2,6 +2,13 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use {'tomasiser/vim-code-dark'}
+  use {'morhetz/gruvbox'}
+  use {'owozsh/amora'}
+  use {'tomasr/molokai'}
+  use {
+      'kaicataldo/material.vim',
+      branch = 'main'
+  }
   use {'kyazdani42/nvim-web-devicons'}
   use {'kyazdani42/nvim-tree.lua'}
   use {'romgrk/barbar.nvim'}
