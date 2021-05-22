@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 vim.cmd('source ~/.config/nvim/keys/mappings.vim')
 vim.cmd('source ~/.config/nvim/general/settings.vim')
 
@@ -10,7 +11,6 @@ require('lc-nvimtree')
 require('lc-blamer')
 require('lc-gitsigns')
 require('lc-treesitter')
-require('lc-telescope')
 require('lc-colorizer')
 require('lc-comment')
 require('lc-whichkey')
