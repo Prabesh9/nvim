@@ -102,8 +102,8 @@ local mappings = {
         f = {"<Plug>(coc-format-selected)", "Format"},
         a = {"<Plug>(coc-codeaction)", "Code Action"},
         q = {"<Plug>(coc-fix-current)", "Quickfix"},
-        s = {"<cmd>CocRestart", "Restart"},
-        b = {"<Plug>CocRebuild", "Rebuild"}
+        s = {"<cmd>CocRestart<cr>", "Restart"},
+        b = {"<cmd>CocRebuild<cr>", "Rebuild"}
 
         -- a = {"<cmd>Lspsaga code_action<cr>", "Code Action"},
         -- A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
