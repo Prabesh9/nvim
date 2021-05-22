@@ -54,4 +54,5 @@ return require('packer').startup(function(use)
   -- utils
   use {'voldikss/vim-floaterm'}
   use {'norcalli/nvim-colorizer.lua'}
+  use {'terrortylor/nvim-comment'}
 end)
