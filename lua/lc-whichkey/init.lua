@@ -138,8 +138,8 @@ local mappings = {
     t = {
         name = "+Terminal",
         n = {"<cmd>FloatermNew<cr>", "New Terminal"},
-        r = {"<cmd>FloatermNew ranger", "Ranger"},
-        l = {"<cmd>FloatermNew lazygit", "LazyGit"}
+        r = {"<cmd>FloatermNew ranger<cr>", "Ranger"},
+        l = {"<cmd>FloatermNew lazygit<cr>", "LazyGit"}
 
     }
 }
