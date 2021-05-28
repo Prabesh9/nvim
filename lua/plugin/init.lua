@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
     use {'glepnir/dashboard-nvim'}
+    use {'Yggdroot/indentLine'}
 
     -- fuzzy finder
     use {
@@ -40,21 +41,22 @@ return require('packer').startup(function(use)
     use {'tpope/vim-fugitive'}
 
     -- lsps
-  -- use {'neovim/nvim-lspconfig'}
-  -- use {'mfussenegger/nvim-jdtls'}
-  use {
-      'neoclide/coc.nvim',
-      branch= 'release'
-  }
-  -- use {'glepnir/lspsaga.nvim'}
-  -- use {'hrsh7th/nvim-compe'}
+    -- use {'neovim/nvim-lspconfig'}
+    -- use {'mfussenegger/nvim-jdtls'}
+    use {
+        'neoclide/coc.nvim',
+        branch= 'release'
+    }
+    -- use {'glepnir/lspsaga.nvim'}
+    -- use {'hrsh7th/nvim-compe'}
 
-  -- syntax highlighting
-  use {'nvim-treesitter/nvim-treesitter'}
+    -- syntax highlighting
+    use {'nvim-treesitter/nvim-treesitter'}
 
-  -- utils
-  use {'voldikss/vim-floaterm'}
-  use {'norcalli/nvim-colorizer.lua'}
-  use {'terrortylor/nvim-comment'}
-  use {'folke/which-key.nvim'}
+    -- utils
+    use {'voldikss/vim-floaterm'}
+    use {'norcalli/nvim-colorizer.lua'}
+    use {'terrortylor/nvim-comment'}
+    use {'folke/which-key.nvim'}
+    use {'chrisbra/csv.vim'}
 end)

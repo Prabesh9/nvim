@@ -142,7 +142,15 @@ local mappings = {
         name = "+Terminal",
         n = {"<cmd>FloatermNew<cr>", "New Terminal"},
         r = {"<cmd>FloatermNew ranger<cr>", "Ranger"},
-        l = {"<cmd>FloatermNew lazygit<cr>", "LazyGit"}
+        g = {"<cmd>FloatermNew lazygit<cr>", "LazyGit"},
+        j = {"<cmd>FloatermPrev<cr>", "Previous Terminal"},
+        k = {"<cmd>FloatermNext<cr>", "Next Terminal"},
+        f = {"<cmd>FloatermFirst<cr>", "First Terminal"},
+        l = {"<cmd>FloatermFirst<cr>", "Last Terminal"},
+        s = {"<cmd>FloatermShow<cr>", "Show Terminal"},
+        h = {"<cmd>FloatermHide<cr>", "Hide Terminal"},
+        c = {"<cmd>FloatermKill<cr>", "Kill Terminal"},
+        t = {"<cmd>FloatermToggle<cr>", "Toggle Terminal"}
 
     }
 }
