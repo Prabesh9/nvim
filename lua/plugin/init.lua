@@ -10,8 +10,9 @@ return require('packer').startup(function(use)
     use {'marko-cerovac/material.nvim'}
 
     -- visual components
-    use {'kyazdani42/nvim-web-devicons'}
-    use {'kyazdani42/nvim-tree.lua'}
+    use {'preservim/nerdtree'}
+    use {'ryanoasis/vim-devicons'}
+    use {'Xuyuanp/nerdtree-git-plugin'}
     use {'romgrk/barbar.nvim'}
     use {
         'glepnir/galaxyline.nvim',
@@ -41,14 +42,12 @@ return require('packer').startup(function(use)
     use {'tpope/vim-fugitive'}
 
     -- lsps
-    -- use {'neovim/nvim-lspconfig'}
-    -- use {'mfussenegger/nvim-jdtls'}
-    use {
-        'neoclide/coc.nvim',
-        branch= 'release'
-    }
-    -- use {'glepnir/lspsaga.nvim'}
-    -- use {'hrsh7th/nvim-compe'}
+    use {'neovim/nvim-lspconfig'}
+    use {'kabouzeid/nvim-lspinstall'}
+    use {'mfussenegger/nvim-jdtls'}
+    use {'mfussenegger/nvim-dap'}
+    use {'glepnir/lspsaga.nvim'}
+    use {'hrsh7th/nvim-compe'}
 
     -- syntax highlighting
     use {'nvim-treesitter/nvim-treesitter'}

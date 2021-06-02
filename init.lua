@@ -2,12 +2,12 @@
 vim.cmd('source ~/.config/nvim/keys/mappings.vim')
 vim.cmd('source ~/.config/nvim/general/settings.vim')
 
-require('lc-config.galaxyline')
+require('lc-config.my_statusline')
 require('lc-config.packer-auto')
 require('plugin')
 require('theme.material')
 require('lc-dashboard')
-require('lc-nvimtree')
+require('lc-nerdtree')
 require('lc-blamer')
 require('lc-gitsigns')
 require('lc-treesitter')
@@ -15,10 +15,13 @@ require('lc-colorizer')
 require('lc-comment')
 require('lc-whichkey')
 require('lc-indentguide')
---require('lc-lspsaga')
---require('lc-compe')
---require('lc-lsp')
---require('lsp.jdtls')
---require('lc-lsp.lua-ls')
-
-vim.cmd('source ~/.config/nvim/vim-script/lc-coc.vim')
+require('lc-lspsaga')
+require('lc-compe')
+require('lc-lsp')
+require('lc-lsp.lspinstall')
+vim.api.nvim_exec([[
+augroup jdtls_lsp
+autocmd!
+autocmd FileType java lua require'jdtls_setup'.setup()
+augroup end
+]], false)
