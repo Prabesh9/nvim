@@ -7,7 +7,7 @@ vim.g.NERDTreeGitStatusIndicatorMapCustom = {
     Unmerged  = '',
     Deleted   = '✖',
     Dirty     = '',
-    Ignored   = '☒',
+    Ignored   = '',
     Clean     = '✓',
     Unknown   = ''
 }

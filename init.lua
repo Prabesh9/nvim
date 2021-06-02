@@ -22,6 +22,6 @@ require('lc-lsp.lspinstall')
 vim.api.nvim_exec([[
 augroup jdtls_lsp
 autocmd!
-autocmd FileType java lua require'jdtls_setup'.setup()
+autocmd FileType java lua require'lc-lsp.jdtls_setup'.setup()
 augroup end
 ]], false)
