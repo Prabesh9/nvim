@@ -1,5 +1,6 @@
+---@diagnostic disable: undefined-global
 -- Example config in lua
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'ocean darker'
 vim.g.material_italic_comments = true
 vim.g.material_italic_keywords = true
 vim.g.material_italic_functions = true

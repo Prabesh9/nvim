@@ -1,11 +1,12 @@
 ---@diagnostic disable: undefined-global
 vim.cmd('source ~/.config/nvim/keys/mappings.vim')
 vim.cmd('source ~/.config/nvim/general/settings.vim')
+vim.cmd('source ~/.config/nvim/plug.vim')
 
+-- require('lc-config.packer-auto')
+-- require('plugin')
 require('lc-config.my_statusline')
-require('lc-config.packer-auto')
-require('plugin')
-require('theme.amora')
+require('theme.gruvbox-material')
 require('lc-dashboard')
 require('lc-nerdtree')
 require('lc-blamer')
