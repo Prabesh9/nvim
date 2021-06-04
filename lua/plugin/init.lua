@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     use {'owozsh/amora'}
     use {'tomasr/molokai'}
     use {'marko-cerovac/material.nvim'}
+    use {'sainnhe/gruvbox-material'}
 
     -- visual components
     use {'preservim/nerdtree'}
