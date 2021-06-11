@@ -1,13 +1,23 @@
 ---@diagnostic disable: undefined-global
-vim.cmd('source ~/.config/nvim/keys/mappings.vim')
-vim.cmd('source ~/.config/nvim/general/settings.vim')
+--    _____ ____
+--   |  __ \___ \
+--   | |__) |__) |   Prabesh Maharjan
+--   |  ___/|__ <    https://github.com/Prabesh9
+--   | |    ___) |
+--   |_|   |____/
+--
+-- ==========================================================
+--  nvim config file (customized)
+--
+require('mappings')
+require('settings')
 
 require('lc-config.packer-auto')
 require('plugin')
 require('lc-config.my_statusline')
 require('theme.gruvbox-material')
 require('lc-dashboard')
-require('lc-nerdtree')
+require('lc-nvimtree')
 require('lc-blamer')
 require('lc-gitsigns')
 require('lc-treesitter')
