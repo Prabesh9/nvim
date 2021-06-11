@@ -52,12 +52,9 @@ vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>ee', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>er', ':NERDTreeRefreshRoot<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>ef', ':NERDTreeFind<CR>', {noremap = true, silent = true})
-
--- telescope
-vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ee', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>er', ':NvimTreeRefreshRoot<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ef', ':NvimTreeFind<CR>', {noremap = true, silent = true})
 
 -- dashboard
 vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
@@ -70,11 +67,9 @@ vim.api.nvim_set_keymap("v", "<leader>k", ":CommentToggle<CR>", {noremap = true,
 local mappings = {
     ["k"] = "Comment",
     ["e"] = "Explorer",
-    ["f"] = "Find File",
     ["h"] = "No Highlight",
 
-    g = {
-        name = "+Git",
+    g = { name = "+Git",
         j = {"<cmd>lua require\"gitsigns\".next_hunk()<cr>", "Next Hunk"},
         k = {"<cmd>lua require\"gitsigns\".prev_hunk()<cr>", "Prev Hunk"},
         p = {"<cmd>lua require\"gitsigns\".preview_hunk()<cr>", "Preview Hunk"},
@@ -90,26 +85,18 @@ local mappings = {
         C = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
     },
 
-    l = {
-        name = "+LSP",
-
-        -- " GoTo code navigation.
-        -- d = {"<Plug>(coc-definition)", "Goto Definition"},
-        -- y = {"<Plug>(coc-type-definition)", "Type Definition"},
-        -- i = {"<Plug>(coc-implementation)", "Goto Implementation"},
-        -- r = {"<Plug>(coc-references)", "List Reference"},
-        -- rn = {"<Plug>(coc-rename)", "Rename"},
-        -- f = {"<Plug>(coc-format-selected)", "Format"},
-        -- a = {"<Plug>(coc-codeaction)", "Code Action"},
-        -- q = {"<Plug>(coc-fix-current)", "Quickfix"},
-        -- s = {"<cmd>CocRestart<cr>", "Restart"},
-        -- b = {"<cmd>CocRebuild<cr>", "Rebuild"}
-
+    l = { name = "+LSP",
         a = {"<cmd>Lspsaga code_action<cr>", "Code Action"},
         A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
+        g = {
+            name = "+GoTo",
+            d = {"<cmd>Telescope lsp_definitions<CR>", "Goto Definition"},
+            D = {"<cmd>lua vim.lsp.buf.declaration()<CR>", "Goto Declaration"},
+            r = {"<cmd>Telescope lsp_references<CR>", "Goto Reference"},
+            i = {"<cmd>Telescope lsp_implementations<CR>", "Goto Implementation"}
+        },
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
         D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>LspFormatting<cr>", "Format"},
         i = {"<cmd>LspInfo<cr>", "Info"},
         l = {"<cmd>Lspsaga lsp_finder<cr>", "LSP Finder"},
         L = {"<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostics"},
@@ -118,28 +105,28 @@ local mappings = {
         r = {"<cmd>Lspsaga rename<cr>", "Rename"},
         t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
         x = {"<cmd>cclose<cr>", "Close Quickfix"},
-        s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
-        S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
 
-    s = {
-        name = "+Search",
+    s = { name = "+Search",
+        s = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search text in current buffer"},
+        f = {"<cmd>Telescope find_files<cr>", "Find file inside project"},
+        t = {"<cmd>Telescope live_grep<cr>", "Search text in project"},
+        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+        R = {"<cmd>Telescope registers<cr>", "Registers"},
         c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
         D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>Telescope find_files<cr>", "Find File"},
         m = {"<cmd>Telescope marks<cr>", "Marks"},
         M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
-        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
-        R = {"<cmd>Telescope registers<cr>", "Registers"},
-        t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
 
-    S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
+    S = { name = "+Session",
+        s = {"<cmd>SessionSave<cr>", "Save Session"},
+        l = {"<cmd>SessionLoad<cr>", "Load Session"}
+    },
 
-    t = {
-        name = "+Terminal",
+    t = { name = "+Terminal",
         n = {"<cmd>FloatermNew<cr>", "New Terminal"},
         r = {"<cmd>FloatermNew ranger<cr>", "Ranger"},
         g = {"<cmd>FloatermNew lazygit<cr>", "LazyGit"},
